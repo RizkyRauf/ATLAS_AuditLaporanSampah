@@ -19,6 +19,7 @@ class CreateWastesTable extends Migration
             $table->string('kategori');
             $table->string('jenis_sampah');
             $table->string('produsen_sampah');
+            $table->integer('berat_sampah');
             $table->timestamps();
         });
     }
