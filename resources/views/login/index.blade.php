@@ -39,7 +39,7 @@
                                     @endif
                                     <div class="card-header">
                                         <div class="mb-4 text-center">
-                                            <img src="assets/images/logo-img.png" width="180" alt="" />
+                                            <img src="assets/images/logo_atlas.jpg" width="250" alt="" />
                                         </div>
                                     </div>
                                     <div class="card-body">
