@@ -13,5 +13,6 @@ class Waste extends Model
         'kategori',
         'jenis_sampah',
         'produsen_sampah',
+        'berat_sampah',
     ];
 }

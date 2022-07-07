@@ -41,11 +41,12 @@ class WasteController extends Controller
             'merk' => 'required',
             'kategori' => 'required',
             'jenis_sampah' => 'required',
-            'produsen_sampah' => 'required'
+            'produsen_sampah' => 'required',
+            'berat_sampah' => 'required'
         ]);
         $show = Waste::create($validatedData);
    
-        return redirect('/wastes')->with('success', 'Game is successfully saved');
+        return redirect('/wastes')->with('success', 'Data is successfully saved');
     }
 
     /**
@@ -85,11 +86,12 @@ class WasteController extends Controller
             'merk' => 'required',
             'kategori' => 'required',
             'jenis_sampah' => 'required',
-            'produsen_sampah' => 'required'
+            'produsen_sampah' => 'required',
+            'berat_sampah' => 'required'
         ]);
         Waste::whereId($id)->update($validatedData);
 
-        return redirect('/wastes')->with('success', 'Game Data is successfully updated');
+        return redirect('/wastes')->with('success', 'Data is successfully updated');
     }
 
     /**
@@ -103,6 +105,6 @@ class WasteController extends Controller
         $waste = Waste::findOrFail($id);
         $waste->delete();
 
-        return redirect('/wastes')->with('success', 'Game Data is successfully deleted');
+        return redirect('/wastes')->with('success', 'Data is successfully deleted');
     }
 }
