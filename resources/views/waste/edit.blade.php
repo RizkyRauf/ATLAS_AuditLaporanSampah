@@ -4,7 +4,7 @@
 @section('wrapper')
 <div class="card uper">
   <div class="card-header">
-    Edit waste waste
+    Edit Data Sampah
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -55,7 +55,14 @@
               <label for="produsen_sampah">Asal Perusahaan/Produsen:</label>
               <input type="text" class="form-control" name="produsen_sampah" value="{{ $waste->produsen_sampah }}"/>
           </div>
-          <button type="submit" class="btn btn-primary">Update waste</button>
+          <div class="form-group">
+              @csrf
+              @method('PATCH')
+              <label for="berat_sampah">Berat Sampah:</label>
+              <input type="number" id="berat_sampah" name="berat_sampah" min="1" max="100" value="{{ $waste->berat_sampah }}"/> KG
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Update Data</button>
       </form>
   </div>
 </div>

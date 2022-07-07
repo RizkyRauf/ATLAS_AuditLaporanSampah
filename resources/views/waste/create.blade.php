@@ -35,12 +35,16 @@
                 <option value="B3">B3</option>
                 <option value="Lainnya">Lainnya</option>
             </select>
-            
         </div>
         <div class="form-group">
             @csrf
             <label for="produsen_sampah">Asal Perusahaan/Produsen:</label>
             <input type="text" class="form-control" name="produsen_sampah"/>
+        </div>
+        <div class="form-group">
+            @csrf
+            <label for="berat_sampah">Berat Sampah:</label>
+            <input type="number" id="berat_sampah" name="berat_sampah" min="1" max="100"> KG
         </div>
         <button type="submit" class="btn btn-primary">Tambah Data</button>
     </form>

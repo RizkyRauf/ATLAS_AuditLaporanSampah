@@ -14,8 +14,11 @@
           <td>Kategori</td>
           <td>Jenis Sampah</td>
           <td>Asal Perusahaan/Produsen</td>
+          <td>Berat Sampah (KG)</td>
           <td>Tanggal Dibuat</td>
+          @can('is_Admin')
           <td colspan="2">Action</td>
+          @endcan
         </tr>
     </thead>
     <tbody>
@@ -25,7 +28,9 @@
             <td>{{$waste->kategori}}</td>
             <td>{{$waste->jenis_sampah}}</td>
             <td>{{$waste->produsen_sampah}}</td>
+            <td>{{$waste->berat_sampah}}</td>
             <td>{{$waste->created_at}}</td>
+            @can('is_Admin')
             <td><a href="{{ route('wastes.edit', $waste->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('wastes.destroy', $waste->id)}}" method="post">
@@ -34,6 +39,8 @@
                   <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </td>
+              
+            @endcan
         </tr>
         @endforeach
     </tbody>
