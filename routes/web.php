@@ -21,17 +21,10 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-/*
-Route::group(['middleware' => ['auth']], function () {
-    Route::group(['middleware' => ['cek_login:admin']], function () {
-        Route::resource('admin', HomeController::class);
-    });
-    Route::group(['middleware' => ['cek_login:user']], function () {
-        Route::resource('user', HomeController::class);
-    });
-});
-*/
+
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
+Route::resource('wastes', 'WasteController')->middleware('auth');
+
 /*
 Route::get('/', function () {
     return view('index');
