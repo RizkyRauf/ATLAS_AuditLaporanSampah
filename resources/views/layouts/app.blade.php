@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/dark-theme.css" />
     <link rel="stylesheet" href="assets/css/semi-dark.css" />
     <link rel="stylesheet" href="assets/css/header-colors.css" />
-    <title>Syndron - Bootstrap5 Admin Template</title>
+    <title>ATLAS - Audit Laporan Sampah</title>
 </head>
 
 <body>

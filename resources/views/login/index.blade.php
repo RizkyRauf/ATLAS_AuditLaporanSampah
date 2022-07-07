@@ -64,7 +64,7 @@
                                                     id="inputUsername"
                                                     name="username"
                                                     type="text"
-                                                    placeholder="Masukkan Username"/><br>
+                                                    placeholder="Masukkan Username"/>
                                                 @if($errors->has('username'))
                                                 <span class="error">{{ $errors->first('username') }}</span>
                                                 @endif

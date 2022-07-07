@@ -2,7 +2,7 @@
     <header>
             <div class="topbar d-flex align-items-center">
                 <nav class="navbar navbar-expand">
-                    <div class="topbar-logo-header">
+                    <div class="topbar-logo-header" onclick="location.href = '/home';">
                         <div class="">
                             <img src="assets/images/logo_atlas.jpg" class="logo-icon" alt="logo icon">
                         </div>
