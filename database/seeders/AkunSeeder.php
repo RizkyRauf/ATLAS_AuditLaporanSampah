@@ -17,15 +17,15 @@ class AkunSeeder extends Seeder
         $user = [
             [
                 'username' => 'admin',
-               'name'=>'Admin',
+                'name'=>'Admin',
                 'role'=>'admin',
-               'password'=> bcrypt('admin123'),
+                'password'=> bcrypt('admin123'),
             ],
             [
                 'username' => 'user',
-               'name'=>'User (non admin)',
+                'name'=>'User (non admin)',
                 'role'=>'user',
-               'password'=> bcrypt('user123'),
+                'password'=> bcrypt('user123'),
             ],
         ];
 
