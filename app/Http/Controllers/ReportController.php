@@ -32,6 +32,7 @@ class ReportController extends Controller
 	    $pdf = PDF::loadview('report.create',['wastes'=>$report]);
 	    return $pdf->stream('laporan-audit-sampah-pdf');
     }
+    
     public function create()
     {
         $reports = Waste::all();
