@@ -23,7 +23,7 @@
                                     <input type="button" onclick="window.location.href = '/wastes/create';" value="Tambah Data"/>
                                     @endcan    
                                     <input type="button" onclick="window.location.href = '/wastes';" value="Lihat Data"/>
-                                    <input type="button" onclick="window.location.href = '/user-profile';" value="Buat Laporan"/>
+                                    <input type="button" onclick="window.location.href = '/report';"value="Buat Laporan"/>
                                     
                                     <input type="button" onclick="window.location.href = '/user-profile';" value="Riwayat Laporan"/>
                                 </div>

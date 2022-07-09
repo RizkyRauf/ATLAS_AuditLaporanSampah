@@ -24,8 +24,13 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
 Route::resource('wastes', 'WasteController')->middleware('auth');
+Route::get('/report', 'ReportController@index')->middleware('auth');
+Route::get('/report/cetak_pdf', 'ReportController@cetak_pdf')->middleware('auth');
+
 
 /*
+Route::resource('reports', 'ReportController')->middleware('auth');
+
 Route::get('/', function () {
     return view('index');
 });
