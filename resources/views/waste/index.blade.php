@@ -1,35 +1,39 @@
 @extends("layouts.app")
-@section('wrapper')
-
+@section('wrapper') 
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
       {{ session()->get('success') }}  
     </div><br />
   @endif
+  
   <table class="table table-striped">
     <thead>
-        <tr><br><br><br><br><br>
-          <td>Merk</td>
-          <td>Kategori</td>
-          <td>Jenis Sampah</td>
-          <td>Asal Perusahaan/Produsen</td>
-          <td>Berat Sampah (KG)</td>
-          <td>Tanggal Dibuat</td>
+        <tr align=center><br><br><br><br>
+          <td>No</td>
+          <td>@sortablelink('merk', 'Merk')</td>
+          <td>@sortablelink('kategori', 'Kategori')</td>
+          <td>@sortablelink('jenis_sampah', 'Jenis Sampah')</td>
+          <td>@sortablelink('produsen_sampah', 'Asal Perusahaan/Produsen')</td>
+          <td>@sortablelink('berat_sampah', 'Berat Sampah (KG)')</td>
+          <td>@sortablelink('created_at', 'Tanggal Dibuat')</td>
           @can('is_Admin')
-          <td colspan="2">Action</td>
+            <td colspan="2">Action</td>
           @endcan
         </tr>
     </thead>
     <tbody>
+        @php $i=1 @endphp
         @foreach($wastes as $waste)
-        <tr>
-            <td>{{$waste->merk}}</td>
-            <td>{{$waste->kategori}}</td>
+        <tr align=center>
+            <td>{{ $i++ }}</td>
+            <td align=left>{{$waste->merk}}</td>
+            <td align=left>{{$waste->kategori}}</td>
             <td>{{$waste->jenis_sampah}}</td>
             <td>{{$waste->produsen_sampah}}</td>
             <td>{{$waste->berat_sampah}}</td>
-            <td>{{$waste->created_at}}</td>
+            <td>{{$waste->created_at->format('d-m-Y')}}</td>
+            
             @can('is_Admin')
             <td><a href="{{ route('wastes.edit', $waste->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
@@ -38,13 +42,14 @@
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
-            </td>
-              
+            </td>      
             @endcan
         </tr>
         @endforeach
     </tbody>
   </table>
+  @can('is_Admin')
   <input type="button" onclick="window.location.href = '/wastes/create';" value="Tambah Data"/>
+@endcan
 <div>
 @endsection

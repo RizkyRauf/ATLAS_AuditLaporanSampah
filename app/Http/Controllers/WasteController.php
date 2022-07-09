@@ -14,7 +14,7 @@ class WasteController extends Controller
      */
     public function index()
     {
-        $wastes = Waste::all();
+        $wastes = Waste::sortable()->paginate();
         
         return view('waste.index',compact('wastes'));
     }
