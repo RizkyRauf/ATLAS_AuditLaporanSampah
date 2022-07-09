@@ -16,6 +16,7 @@
             @csrf
             <label for="kategori">Kategori:</label>
             <select id="kategori" name="kategori">
+                <option value="">-- Pilih Ketegori Sampah--</option>
                 <option value="Buah atau Sayuran">Buah atau Sayuran</option>
                 <option value="Barang Elektronik">Barang Elektronik</option>
                 <option value="Kemasan Makanan">Kemasan Makanan</option>
@@ -30,6 +31,7 @@
             @csrf
             <label for="jenis_sampah">Jenis Sampah:</label>
             <select id="jenis_sampah" name="jenis_sampah">
+                <option value="">-- Pilih Jenis Sampah--</option>
                 <option value="Organik">Organik</option>
                 <option value="Anorganik">Anorganik</option>
                 <option value="B3">B3</option>
