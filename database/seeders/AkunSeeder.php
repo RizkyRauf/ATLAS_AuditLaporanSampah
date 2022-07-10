@@ -18,13 +18,13 @@ class AkunSeeder extends Seeder
             [
                 'username' => 'admin',
                 'name'=>'Admin',
-                'role'=>'admin',
+                'isAdmin'=>true,
                 'password'=> bcrypt('admin123'),
             ],
             [
                 'username' => 'user',
                 'name'=>'User (non admin)',
-                'role'=>'user',
+                'isAdmin'=>false,
                 'password'=> bcrypt('user123'),
             ],
         ];
