@@ -19,8 +19,11 @@
 	</head>
 
 <body class="bg-login">
+
 	<!--wrapper-->
+
     <div class="wrapper">
+        <div style="background-image : url('https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2021/11/24/3833346409.jpg');">
         <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
             <div class="container-fluid">
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
@@ -39,7 +42,7 @@
                                     @endif
                                     <div class="card-header">
                                         <div class="mb-4 text-center">
-                                            <img src="assets/images/logo_atlas.jpg" width="250" alt="" />
+                                            <img src="assets/images/logo_atlas.jpg" width="200" alt="" />
                                         </div>
                                     </div>
                                     <div class="card-body">
