@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Waste;
 use Illuminate\Http\Request;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ReportController extends Controller
 {
@@ -16,7 +16,7 @@ class ReportController extends Controller
     public function index()
     {
         $report = Waste::all();
-    	return view('report.index',['wastes'=>$report]);
+    	return view('report.index',compact('report'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ReportController extends Controller
 	    $report = Waste::all();
  
 	    $pdf = PDF::loadview('report.create',['wastes'=>$report]);
-	    return $pdf->stream('laporan-audit-sampah-pdf');
+	    return $pdf->stream();
     }
     
     public function create()

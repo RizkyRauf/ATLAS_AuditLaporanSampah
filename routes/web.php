@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('login.index');
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/login', 'LoginController@index')->name('login')->middleware('guest');
+Route::post('/login', 'LoginController@authenticate');
+Route::post('/logout', 'LoginController@logout');
 
-Route::get('/home', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/home', 'HomeController@index')->middleware('auth');
 Route::resource('wastes', 'WasteController')->middleware('auth');
 Route::get('/report', 'ReportController@index')->middleware('auth');
 Route::get('/report/cetak_pdf', 'ReportController@cetak_pdf')->middleware('auth');
