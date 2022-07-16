@@ -63,10 +63,58 @@
         @endforeach
     </tbody>
     </table>
+    <!-- ChartWest -->
+    <div id="ChartWest"></div>
 </div>
   
 <br><br><br>
 </body>
+
+<!-- DataChart -->
+
+@section("ScriptChart")
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+    Highcharts.chart('ChartWest', {
+    chart: {
+        type: 'column'
+        },
+        title: {
+            text: 'Laporan Data West'
+        },
+        xAxis: {
+            categories: {!!json_encode($categories)!!}
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                Nilai'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Jumlah',
+            data: {!!json_encode($data)!!}
+
+        }]
+    });
+</script>
+@endsection
+<!-- End DataChart -->
 
 <script>
         $(document).ready(function() {
