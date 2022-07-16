@@ -59,6 +59,7 @@
 
 	<script src="{{ asset('assets/js/app.js') }}"></script>
 	@yield("script")
+    @yield("ScriptChart")
     
 </body>
 </html>
