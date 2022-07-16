@@ -16,7 +16,16 @@ class WasteController extends Controller
     {
         $wastes = Waste::sortable()->paginate();
         
-        return view('waste.index',compact('wastes'));
+        //meyiapkan data untuk chart
+        $categories = [];
+        $data = [];
+        foreach ($wastes as $waste) {
+            $categories[] = $waste->kategori;
+            $data[] = $waste->berat_sampah;
+        }
+        
+        return view('waste.index',compact('wastes'), ['categories' => $categories, 'data' => $data]);
+        
     }
 
     /**
